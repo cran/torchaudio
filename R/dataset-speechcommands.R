@@ -1,5 +1,5 @@
 #' @keywords internal
-load_speechcommands_item <- function(filepath, path, hash_divider = "_nohash_") {
+load_speechcommands_item <- function(filepath, path, hash_divider = "_nohash_", class_to_index, normalization = NULL) {
   if(length(filepath) != 1) value_error("length(filepath) should be 1.")
   relpath = fs::path_rel(filepath, path)
   relpath_split = unlist(fs::path_split(relpath))
@@ -12,11 +12,12 @@ load_speechcommands_item <- function(filepath, path, hash_divider = "_nohash_") 
   utterance_number = as.integer(speaker_id_and_utterance_number[2])
 
   # Load audio
-  waveform_and_sample_rate = torchaudio_load(filepath, normalization = FALSE)
+  waveform_and_sample_rate = torchaudio_load(filepath, normalization = normalization)
   waveform = waveform_and_sample_rate[[1]][1]$unsqueeze(1)
   sample_rate = waveform_and_sample_rate[[2]]
   return(list(waveform = waveform,
               sample_rate = sample_rate,
+              label_index = class_to_index(label),
               label = label, speaker_id,
               utterance_number = utterance_number))
 }
@@ -30,6 +31,11 @@ load_speechcommands_item <- function(filepath, path, hash_divider = "_nohash_") 
 #'            (default: ``"speech_commands_v0.02"``)
 #' @param folder_in_archive  (str, optional): The top-level directory of the dataset.  (default: ``"SpeechCommands"``)
 #' @param download  (bool, optional): Whether to download the dataset if it is not found at root path.  (default: ``FALSE``).
+#' @param normalization (NULL, bool, int or function): Optional normalization.
+#'  If boolean TRUE, then output is divided by 2^31. Assuming the input is signed 32-bit audio,
+#'  this normalizes to \[-1, 1\]. If numeric, then output is divided by that number.
+#'  If function, then the output is passed as a paramete to the given function,
+#'  then the output is divided by the result. (Default: NULL)
 #'
 #' @return a torch::dataset()
 #'
@@ -50,17 +56,31 @@ speechcommand_dataset <- torch::dataset(
     root,
     url = "speech_commands_v0.02",
     folder_in_archive = "SpeechCommands",
-    download = FALSE
+    download = FALSE,
+    normalization = NULL
   ) {
 
     self$URL <- url
     self$FOLDER_IN_ARCHIVE <- folder_in_archive
+    self$normalization <- normalization
 
+    if(url %in% "speech_commands_v0.01") {
+      classes <- c("_background_noise_", "bed", "bird", "cat", "dog", "down", "eight", "five", "four",
+                        "go", "happy", "house", "left", "marvin", "nine", "no", "off",
+                        "on", "one", "right", "seven", "sheila", "six", "stop", "three",
+                        "tree", "two", "up", "wow", "yes", "zero")
+    } else {
+      classes <- c("_background_noise_", "backward", "bed", "bird", "cat", "dog",
+                        "down", "eight", "five", "follow", "forward", "four", "go", "happy",
+                        "house", "learn", "left", "marvin", "nine", "no", "off", "on",
+                        "one", "right", "seven", "sheila", "six", "stop", "three", "tree",
+                        "two", "up", "visual", "wow", "yes", "zero")
+    }
+    self$classes <- classes[!(classes %in% self$EXCEPT_FOLDER)]
     if(url %in% c(
       "speech_commands_v0.01",
       "speech_commands_v0.02"
-    )
-    ) {
+    )) {
       base_url = "https://storage.googleapis.com/download.tensorflow.org/data"
       ext_archive = ".tar.gz"
       url = file.path(base_url, paste0(url, ext_archive))
@@ -92,10 +112,23 @@ speechcommand_dataset <- torch::dataset(
     force(n)
     if(length(n) != 1 || n <= 0) value_error("n should be a single positive integer.")
     fileid = self$.walker[n]
-    return(load_speechcommands_item(fileid, self$.path, self$HASH_DIVIDER))
+    output <- load_speechcommands_item(
+      fileid, self$.path, self$HASH_DIVIDER,
+      class_to_index = self$class_to_index,
+      normalization = self$normalization
+    )
+    return(output)
   },
 
   .length = function() {
     length(self$.walker)
+  },
+
+  class_to_index = function(class) {
+    torch::torch_scalar_tensor(which(self$classes == class))
+  },
+
+  index_to_class = function(index) {
+    self$classes[as.numeric(index$item())]
   }
 )

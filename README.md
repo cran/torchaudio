@@ -1,12 +1,11 @@
 
+# torchaudio <a href='https://curso-r.github.io/torchaudio/'><img src='man/figures/torchaudio.png' align="right" height="139" /></a>
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# torchaudio
-
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R build
 status](https://github.com/curso-r/torchaudio/workflows/R-CMD-check/badge.svg)](https://github.com/curso-r/torchaudio/actions)
 [![CRAN
@@ -46,7 +45,7 @@ url = "https://pytorch.org/tutorials/_static/img/steam-train-whistle-daniel_simo
 filename = tempfile(fileext = ".wav")
 r = httr::GET(url, httr::write_disk(filename, overwrite = TRUE))
 
-waveform_and_sample_rate = torchaudio_load(filename)
+waveform_and_sample_rate = transform_to_tensor(tuneR_loader(filename))
 waveform = waveform_and_sample_rate[[1]]
 sample_rate = waveform_and_sample_rate[[2]]
 
@@ -77,28 +76,28 @@ image(specgram_as_array[,ncol(specgram_as_array):1], col = viridis::viridis(n = 
 
 ## Datasets ([go to issue](https://github.com/curso-r/torchaudio/issues/17))
 
-  - [x] CMUARCTIC
-  - [ ] COMMONVOICE
-  - [ ] GTZAN
-  - [ ] LIBRISPEECH
-  - [ ] LIBRITTS
-  - [ ] LJSPEECH
-  - [x] SPEECHCOMMANDS
-  - [ ] TEDLIUM
-  - [ ] VCTK
-  - [ ] VCTK\_092
-  - [x] YESNO
+-   [x] CMUARCTIC
+-   [ ] COMMONVOICE
+-   [ ] GTZAN
+-   [ ] LIBRISPEECH
+-   [ ] LIBRITTS
+-   [ ] LJSPEECH
+-   [x] SPEECHCOMMANDS
+-   [ ] TEDLIUM
+-   [ ] VCTK
+-   [ ] VCTK\_092
+-   [x] YESNO
 
 ## Models ([go to issue](https://github.com/curso-r/torchaudio/issues/19))
 
-  - [ ] ConvTasNet
-  - [ ] Wav2Letter
-  - [x] WaveRNN
-  - [ ] (what else? novel structures are very welcome\!)
+-   [ ] ConvTasNet
+-   [ ] Wav2Letter
+-   [x] WaveRNN
+-   [ ] (what else? novel structures are very welcome!)
 
 ## I/O Backend
 
-  - [x] {tuneR}
+-   [x] {tuneR}
 
 ## Code of Conduct
 

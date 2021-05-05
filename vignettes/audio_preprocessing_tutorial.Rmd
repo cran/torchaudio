@@ -11,7 +11,7 @@ vignette: >
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  eval = identical(Sys.getenv("TORCH_TEST", unset = "0"), "1")
+  eval = FALSE#identical(Sys.getenv("TORCH_TEST", unset = "0"), "1")
 )
 ```
 
@@ -45,7 +45,7 @@ url = "https://pytorch.org/tutorials/_static/img/steam-train-whistle-daniel_simo
 filename = tempfile(fileext = ".wav")
 r = httr::GET(url, httr::write_disk(filename, overwrite = TRUE))
 
-waveform_and_sample_rate = torchaudio_load(filename)
+waveform_and_sample_rate = transform_to_tensor(tuneR_loader(filename))
 waveform = waveform_and_sample_rate[[1]]
 sample_rate = waveform_and_sample_rate[[2]]
 
@@ -287,10 +287,6 @@ sample <- yesno_data[n]
 sample
 
 plot(sample[[1]][1], col = "royalblue", type = "l")
-```
-
-```{r, echo = FALSE}
-fs::dir_delete(temp)
 ```
 
 Now, whenever you ask for a sound file from the dataset, it is loaded in memory only when you ask for it.
