@@ -58,7 +58,7 @@ knitr::opts_chunk$set(
 ## -----------------------------------------------------------------------------
 #  normalize <- function(tensor) {
 #   # Subtract the mean, and scale to the interval [-1,1]
-#   tensor_minusmean <- tensor - tensor.mean()
+#   tensor_minusmean <- tensor - tensor$mean()
 #   return(tensor_minusmean/tensor_minusmean$abs()$max())
 #  }
 #  

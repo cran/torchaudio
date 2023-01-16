@@ -1,28 +1,26 @@
 Package: torchaudio
 Title: R Interface to 'pytorch''s 'torchaudio'
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: c(
-    person(given = "Athos",
-           family = "Damiani",
-           role = c("aut", "cre"),
-           email = "athos.damiani@gmail.com"
-           )
+    person("Sigrid", "Keydana", email = "sigrid@posit.co", role = c("aut", "cre")),
+    person("Athos", "Damiani", role = c("aut"), email = "athos.damiani@gmail.com"),
+    person("Daniel", "Falbel", email = "daniel@posit.co", role = c("aut"))
     )
-Description: Provides access to datasets, models and preprocessing
+Description: Provides access to datasets, models and processing
     facilities for deep learning in audio.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: false
-RoxygenNote: 7.1.1
-Suggests: testthat, monitoR, tuneR, knitr, rmarkdown, stringr, numbers,
-        purrr, scales, httr, viridis, av
-Imports: torch (>= 0.3.0), fs, rlang, rappdirs, utils, tools, glue,
-        Rcpp, withr
+RoxygenNote: 7.2.3
+Suggests: testthat, tuneR, knitr, rmarkdown, stringr, numbers, purrr,
+        scales, httr, viridis, av
+Imports: torch (>= 0.3.0), fs, rlang, utils, tools, glue, Rcpp, methods
 VignetteBuilder: knitr
 LinkingTo: Rcpp
 NeedsCompilation: yes
-Packaged: 2021-05-04 22:30:10 UTC; athos
-Author: Athos Damiani [aut, cre]
-Maintainer: Athos Damiani <athos.damiani@gmail.com>
+Packaged: 2023-01-16 16:57:59 UTC; key
+Author: Sigrid Keydana [aut, cre],
+  Athos Damiani [aut],
+  Daniel Falbel [aut]
+Maintainer: Sigrid Keydana <sigrid@posit.co>
 Repository: CRAN
-Date/Publication: 2021-05-05 15:20:07 UTC
+Date/Publication: 2023-01-16 19:20:02 UTC
