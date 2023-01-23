@@ -1,6 +1,6 @@
 Package: torchaudio
 Title: R Interface to 'pytorch''s 'torchaudio'
-Version: 0.2.1
+Version: 0.2.2
 Authors@R: c(
     person("Sigrid", "Keydana", email = "sigrid@posit.co", role = c("aut", "cre")),
     person("Athos", "Damiani", role = c("aut"), email = "athos.damiani@gmail.com"),
@@ -17,10 +17,10 @@ Imports: torch (>= 0.3.0), fs, rlang, utils, tools, glue, Rcpp, methods
 VignetteBuilder: knitr
 LinkingTo: Rcpp
 NeedsCompilation: yes
-Packaged: 2023-01-16 16:57:59 UTC; key
+Packaged: 2023-01-23 15:33:25 UTC; key
 Author: Sigrid Keydana [aut, cre],
   Athos Damiani [aut],
   Daniel Falbel [aut]
 Maintainer: Sigrid Keydana <sigrid@posit.co>
 Repository: CRAN
-Date/Publication: 2023-01-16 19:20:02 UTC
+Date/Publication: 2023-01-23 16:40:02 UTC

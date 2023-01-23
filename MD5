@@ -1,7 +1,7 @@
-2fa1cf53d5049174d7bbe3920d1fe7f9 *DESCRIPTION
+c7317efe3c12ad500961dc1667158a38 *DESCRIPTION
 744110aef45a05c79ec790f6894fd787 *LICENSE
 fc1f289bf05ff694e2e91ad5ca6e2269 *NAMESPACE
-41ff69a5fb1aa9bdf05ca6c61d28cc79 *NEWS.md
+3f683d5b544a96fbea91125e661745b6 *NEWS.md
 408e68e7e0a9f7410b8e12aca367cdc4 *R/RcppExports.R
 5ad462267e17957d279359d52d4853f4 *R/backend-audiofile.R
 0b645e964551ecc6be7917a0373b707c *R/backend-av.R
@@ -11,7 +11,7 @@ f8471686e1e08a73b69377c470e30e63 *R/backend-utils.R
 fe0f80ed4ca5f7a0727a938fbd4114be *R/conditions.R
 3b020748af597f5df93038045a402bd4 *R/dataset-cmuarctic.R
 0f97f93f559c73e0df399b55e42cfd4a *R/dataset-speechcommands.R
-410d47cbed1d5ceda37a2e8a11a2c125 *R/dataset-utils.R
+d79612dae487013857f026aac690ddc4 *R/dataset-utils.R
 8b52c3ea57a94a1861a03e9801b8616c *R/dataset-yesno.R
 4036cbc45631844278e6fa0bcb740098 *R/extras.R
 b841ab1919ec8377f12d5a6f21eda107 *R/functional.R
@@ -47,7 +47,7 @@ c904ed97714b97f59ea8ae0487934c97 *inst/waves_yesno/1_1_1_1_1_1_1_1.wav
 29c7522bebb4165e7efe7628b451ed36 *man/av_loader.Rd
 1a14f1720a83f196836d77e27e22d009 *man/backend_utils_list_audio_backends.Rd
 3f1c3155860fddfcee77a825616ddf51 *man/cmuarctic_dataset.Rd
-47a3f0acb0bc89ddf6626547c7bcc748 *man/extract_archive.Rd
+a0f8b6eed0a2543682c28b60d9645fa6 *man/extract_archive.Rd
 3757b439a15573101521df802f4bcc94 *man/figures/README-unnamed-chunk-3-1.png
 6a02004f1a19a7cdafe431781ffe3795 *man/figures/README-unnamed-chunk-4-1.png
 4b05da8cf0cab79b509b43b8ff07948d *man/figures/README-unnamed-chunk-5-1.png
@@ -140,7 +140,7 @@ b5f117be14bde0bddfc4168997a485ac *man/tuneR_loader.Rd
 09e32aad57a94f51658920a777f166df *man/walk_files.Rd
 0dcec4037434640aaa3f16ae540260e2 *man/wav_info.Rd
 620bbd1a6e3d55caef24626294d4c3e2 *man/yesno_dataset.Rd
-295aaf5038a0575544744b77fab7b5dc *src/AudioFile.h
+e7b9866ad05026ce3336e0c5cce38444 *src/AudioFile.h
 3671489af041820b9455113fed9e714f *src/RcppExports.cpp
 f2c1ebfa8654c84d4329709804db0380 *src/minimp3.h
 97abfe9cbebe526b0fb77b65e83d472e *src/minimp3_ex.h
