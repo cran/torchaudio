@@ -1,8 +1,8 @@
-d999aef40d18216417bf72b080fb75c0 *DESCRIPTION
+b3b99e79ba4b6a9e28b31e303f740aef *DESCRIPTION
 744110aef45a05c79ec790f6894fd787 *LICENSE
 803967eef0f536b5df7179b47651c9c4 *NAMESPACE
-718429c534acc4fc43e8c2df4c67e15b *NEWS.md
-e89e266784352bb59cd560682b58cc2d *R/backend-av.R
+12b16b56c854a7d1fe062eda486fa249 *NEWS.md
+c2af09bc432acad2993d19f4bba0e0e0 *R/backend-av.R
 e6c2b6a657abd2808c0330df23a59ffb *R/backend-common.R
 a7a298232c6e4c716c955a0f89079958 *R/backend-tuneR.R
 4eab86ce6e7111e8a734eb6e39983879 *R/backend-utils.R
@@ -18,7 +18,7 @@ d4449921ea75f1284bd0c10c73940eb3 *R/internal-misc_ops.R
 0df00a66f9dfbf87ca38bcf11ce7023f *R/models-wavernn.R
 32006976053e927bac64079d9f6af5b9 *R/torchaudio-package.R
 60144ca413673a3e4ee834ba323e6812 *R/transforms.R
-b2b69dbbfbdd52b880e728b728391e57 *README.md
+3d1a39962fac884602c3883839289558 *README.md
 5545b217038339a2742ba82408bf74ab *build/vignette.rds
 63324770f2473ba5e92d3bed75e2aded *inst/ARCTIC/cmu_us_aew_arctic/etc/txt.done.data
 0bf614ffd53d9f07aba28fd60daa5409 *inst/ARCTIC/cmu_us_aew_arctic/wav/arctic_a0001.wav
@@ -46,6 +46,8 @@ a0f8b6eed0a2543682c28b60d9645fa6 *man/extract_archive.Rd
 3757b439a15573101521df802f4bcc94 *man/figures/README-unnamed-chunk-3-1.png
 6a02004f1a19a7cdafe431781ffe3795 *man/figures/README-unnamed-chunk-4-1.png
 4b05da8cf0cab79b509b43b8ff07948d *man/figures/README-unnamed-chunk-5-1.png
+6a02004f1a19a7cdafe431781ffe3795 *man/figures/README-unnamed-chunk-7-1.png
+a816f9581a98f994ec655ffe9b4a8262 *man/figures/README-unnamed-chunk-8-1.png
 8c771067728cc263c354e22042cd995b *man/figures/torchaudio.png
 1fe9212a41a4bd4d6ef1bc2b5f5924d0 *man/functional__combine_max.Rd
 5954b1144f95aca58f47b46aee4a2d73 *man/functional__compute_nccf.Rd
@@ -134,7 +136,7 @@ e737cf4fdee9ec73d9142b6ce4e7b0a7 *man/transform_to_tensor.Rd
 620bbd1a6e3d55caef24626294d4c3e2 *man/yesno_dataset.Rd
 89c108bee96f472418b5a4005391e4ff *tests/testthat.R
 f8f524fb3fb60a276df782ff5185b7ff *tests/testthat/helper-torchaudio.R
-b430218318800a9dbbf991c29493ea81 *tests/testthat/test-backend-av.R
+937bb47d93b42c48b4cdc5158949b7ea *tests/testthat/test-backend-av.R
 957d3e6bd0b0c4946dedc9ec8067b51f *tests/testthat/test-backend-common.R
 c234f4053390c7ba52cce66fb17930cb *tests/testthat/test-backend-tuneR.R
 64e28c1a6af543e91e7b6bde69dd9192 *tests/testthat/test-backend-utils.R
